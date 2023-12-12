@@ -1,0 +1,50 @@
+{% extends 'contact.html' %}
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'details.css' %}">
+        <link rel="stylesheet" href="{% static 'slideshowgallery.css' %}">
+    </head>
+    
+    <body>
+      
+      <div class="row">
+        <div class="row">
+          {% for i in data %}
+          <div class="col-md-6">
+            <h1 id="name">{{i.Add_Services}}</h1><br><br><br><br>
+            <div class="book">
+              <div>
+              
+                <img src="{{i.Image.url}}" alt="image" width="70%" class="image">
+             
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+          
+              <h2 id="time">Select date and time:</h2> 
+    
+                  {% csrf_token %}
+                  <div>
+                      <input type="datetime-local" id="date" name="date"> 
+                  </div>
+                  <div>
+                  <a href="{% url 'bookingform' %}"><button id="appoinmentbutton">Book An Appoinment</button></a>  
+                
+                </div>
+           
+            </div>
+    </div>
+     
+       
+
+    </body>
+    
+
+    
+</html>
+{% endblock %}

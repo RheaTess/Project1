@@ -1,0 +1,95 @@
+{% extends 'contact.html' %}
+{% load static %}
+{% block content %}
+
+    <head>
+        <link rel="stylesheet" href="{% static 'saloncards.css' %}">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@700&display=swap" rel="stylesheet">
+
+    </head>
+    
+    <body>
+
+      <div class="container-fluid ">
+        
+        <div class="container">
+           
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                  <li data-target="#myCarousel" data-slide-to="5"></li>
+              </ol>
+
+  <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+              <div class="item active">
+                  <center><img src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27179.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=sph" alt="" style="width:40%;"></center>
+              </div>
+
+              <div class="item">
+                  <center><img src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=sph" alt="" style="width:40%;"></center>
+              </div>
+  
+              <div class="item">
+                  <center><img src="https://img.freepik.com/premium-photo/hairdresser-coloring-client-woman-hair-beauty-barber-studio-salonprofessional-dye-concept_616126-762.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=sph" alt="" style="width:40%;"></center>
+              </div>
+              <div class="item">
+                <center><img src="https://img.freepik.com/free-photo/hairdresser-taking-care-her-client_23-2149319763.jpg?w=740&t=st=1699952121~exp=1699952721~hmac=a93bf42f109d479e895229bd072d6d383bf3b8c160d27806ae432092f37b3cbe" alt="" style="width:40%;"></center>
+              </div>
+              <div class="item">
+                <center><img src="https://img.freepik.com/free-photo/beautiul-woman-with-green-make-up-creative-color-nails_186202-7072.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=ais" alt="" style="width:27%;"></center>
+              </div>
+              <div class="item">
+                <center><img src="https://img.freepik.com/free-photo/picture-beautiful-woman-massage-salon_155003-5893.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=sph" alt="" style="width:40%;"></center>
+              </div>
+          </div>
+
+  <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+          </a>
+          </div>
+        </div>
+</div>
+      <br><br>
+      <h2 style="font-size: 30px;color: antiquewhite;font-family: 'Edu TAS Beginner', cursive;">AVAILABLE SERVICES</h2>
+      <br><br><br><br><br><br> 
+
+        
+        <div class="row">
+                
+           {% for i in data %}
+            <div class="col-md-6"  style="width: 40rem;">
+              <div class="card" style="background-color: black ;">
+                <center>
+                <img class="card-img-top" src="{{i.Image.url}}" alt="Card image" width="300px" height="400px" >
+                <h5 class="card-title" style="color: antiquewhite;font-size: 20px;">{{i.Add_Services}}</h5></center><br>
+                <center><a style="text-decoration: none; color: rgb(116, 13, 13);"  href="{% url 'details' categoryid=i.id %}" class="card-link"><button id="detailsbutton">VIEW SERVICE</button></center> </a>&nbsp;&nbsp;
+              </div>
+            </div>
+           {% endfor %} 
+        </div>    
+
+     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+  
+
+{% endblock %}

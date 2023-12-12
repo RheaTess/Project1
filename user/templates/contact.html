@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'contact.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="top">
+                <h1>
+                    <img src="https://static.vecteezy.com/system/resources/previews/024/284/257/original/beauty-salon-logo-design-free-vector.jpg" alt="logo" class="logo">
+                     <b style="font-size: 30px;color: antiquewhite;font-family: 'Edu TAS Beginner', cursive;"><i>Black Beauty</i></b>
+                </h1>
+                <nav class="navbar">
+                    <div class="nav-left">
+                        <a id="home" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'home' %}">HOME</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       
+                        <a id="services" class="dropbtn" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'saloncards' %}">CATEGORY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="home" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'services' categoryid='all' %}">SERVICES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        
+                        
+                        <a id="contact" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'contact' %}">CONTACT</a>
+                    </div>
+                    <div class="nav-right">
+                    {% if 'loginid' in request.session %}
+                       <a id="welcome" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="">Welcome, {{request.session.loginname}}&nbsp;&nbsp;&nbsp;&nbsp;
+                       <a id="logout" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="">LOGOUT</a>&nbsp;&nbsp;&nbsp;
+                    
+                    {% else %}
+                       <a id="register" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'register' %}">REGISTER</a>&nbsp;&nbsp;&nbsp;
+                       <a id="login" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'login' %}">LOGIN</a>&nbsp;&nbsp;&nbsp;
+
+                    {% endif %}
+                       <a id="booknow" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'saloncards' %}">BOOK NOW</a>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+
+        <br><br>
+        {% block content %}
+        <div class="container-fluid">
+            <div class="contact" style="position: relative;left: 30px;">
+                <h1>CONTACTS</h1>
+                <p>PhNo - 91+ 7823467834<br><br>
+
+                PhNo - 91+ 6724563412<br><br>
+
+                Tel - 04842344005<br><br>
+                E-Mail - blackbeauty23mhjk@yahoo.co.in</p>
+
+                <br><br><br><br>
+                <h1>ADDRESS</h1>
+                <p>
+                    Complex-12,rinejunction<br><br>
+
+                    Edapally,Kochi<br><br>
+
+                    Kerela - 682025
+                </p>
+
+            </div>
+            
+
+        
+  
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="feedback" style="position: relative;left: 400px;">
+            <h1>Feedback Form</h1>
+            <form action="{% url 'feedbackdata' %}" method="post">
+                {% csrf_token %}
+                <label for="name">Enter Name:</label>
+                <input type="text" id="iname" name="name" placeholder="enter your name"><br><br><br>
+                <label for="phno">Enter Ph No:</label>
+                <input type="number" id="iphno" name="phno" placeholder="91+"><br><br><br>
+                <label for="message">Message:</label>
+                <input type="text" id="imessage" name="message" placeholder="message"><br><br><br>
+                <input type="submit" id="feedbacksubmit" value="SUBMIT">
+            </form>
+
+        </div>
+        </div>
+    {% endblock %}
+  
+  
+    <br><br><br>
+
+
+
+        <footer>
+            <div class="container-fluid">
+                <div id="address">
+                    <h2 style="color:antiquewhite"><b>ADDRESS</b></h2>
+                    <p style="color:antiquewhite"> Complex-12,rinejunction<br><br>Edapally,Kochi<br><br>Kerela - 682025</p>
+                </div>
+
+                <div id="links">
+                    <h2 style="color:antiquewhite"><b>LINKS</h2></b><br>
+                    <a style="text-decoration: none;color:antiquewhite;" href="{% url 'home' %}">HOME</a><br><br>
+                    <a style="text-decoration: none;color:antiquewhite ;" href="{% url 'saloncards' %}">SERVICES</a><br><br>
+                    <a style="text-decoration: none;color:antiquewhite ;" href="{% url 'contact' %}" >CONTACT</a><br><br> 
+                    <a style="text-decoration: none;color:antiquewhite;" href="{% url 'register' %}">REGISTER</a><br><br>                   
+                    <a style="text-decoration: none;color:antiquewhite ;" href="{% url 'login' %}">LOGIN</a><br><br>
+                    <a style="text-decoration: none;color:antiquewhite;" href="{% url 'saloncards' %}">BOOK NOW</a><br><br>
+                </div>
+                
+                <div id="contacts">
+                    <h2 style="color:antiquewhite"><b>CONTACTS</b></h2>
+                    <p style="color:antiquewhite">PhNo - 91+ 7823467834<br><br>PhNo - 91+ 6724563412<br><br>Tel - 04842344005</p>
+                </div>
+            </div> 
+        </footer>
+        
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+    </body>
+
+</html>
+    
+
+
+
+    </body>
+     
+</html>

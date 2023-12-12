@@ -1,0 +1,48 @@
+body {
+    background-image: url("https://img.freepik.com/premium-photo/barbershop-barber-shop-interior-haircuts-hairdresser-s-workplace-generative-ai_863013-6672.jpg?size=626&ext=jpg&ga=GA1.1.953376797.1698401189&semt=sph");
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.form-container {
+    padding: 30px;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+#registerbutton {
+    background-color: black;
+    color: antiquewhite;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#register {
+   font-size: 100px;
+   color: antiquewhite;
+   font-family: 'Edu TAS Beginner', cursive;
+   position: absolute;
+   top: 0px;
+   left: 35%;
+}
+#loginbutton {
+
+    background-color: black;
+    color: antiquewhite;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#login {
+    font-size: 100px;
+    color: antiquewhite;
+    font-family: 'Edu TAS Beginner', cursive;
+    position: absolute;
+    top: 0px;
+    left: 40%;
+ }

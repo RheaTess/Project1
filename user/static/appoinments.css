@@ -1,0 +1,12 @@
+h2 {
+    
+    color: antiquewhite;
+    font-family: 'Edu TAS Beginner', cursive;
+    background-color: black;
+    margin-left: 0px;
+    padding: 20px;
+    margin-right: 30px;
+  }
+.current {
+    margin-left: 50px;
+}

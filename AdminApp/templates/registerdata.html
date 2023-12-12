@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+    </head>
+    <body>
+        <center><h1 style="background-color: black;color: antiquewhite;padding: 100px;">REGISTERED USERS
+            <p style="color: antiquewhite; background-color: black;font-size: 20px;"> Total Number Of Registered Users : {{ totalregistered_users }}</p></h1></center>
+
+        <h1>REGISTER TABLE</h1>
+        
+        <table class="table" border="1">
+            
+            <tr>
+                <th> Name</th>
+                <th> E-MAIL </th>
+                <th>PH NO</th>
+                <th>PASSWORD</th>
+            </tr>
+            {% for i in registertabledata %}
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.PhNo}}</td>
+                <td>{{i.Password}}</td>
+              
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

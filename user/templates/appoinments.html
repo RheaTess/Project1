@@ -1,0 +1,21 @@
+{% extends 'contact.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'appoinments.css' %}">
+
+</head>
+<body>
+    <h2 style="font-size: 30px;color: antiquewhite;font-family: 'Edu TAS Beginner', cursive;"> Appoinments</h2>
+    <div class="current">
+        {% for i in currentdata %}
+        <img src="{{i.serviceid.Image.url}}" alt="image" width="10%">
+        <h3>{{i.serviceid.categoryid}}</h3>
+        <h4>{{i.serviceid.Add_Services}}</h4>
+        <p>{{i.Date}}</p>
+        <hr style="border-top: 1px solid grey">
+        {% endfor %}
+    </div>
+    
+</body>
+{% endblock %}

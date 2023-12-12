@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'register.css' %}">
+
+    </head>
+    <body>
+        <h1 id="login">Login</h1>
+        <div class="form-container">
+            <form action="{% url 'logindata' %}" method="post">
+                
+                {% csrf_token %}
+            
+                <label for="email" id="email">E-MAIL :</label>
+                <input type="mailto" id="iemail" name="email" placeholder="enter your e-mail"><br><br><br>
+                <label for="password" id="password">PASSWORD :</label>
+                <input type="text" id="ipassword" name="password" placeholder="*******"><br><br><br>
+                <input type="submit" id="loginbutton" value="Login">
+                <p>{{msg}}</p>
+                <p>Not Registered ? Then click to <a style="text-decoration: none;" href="{% url 'register' %}">Register</a></p>
+                
+            </form>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+<html>
+    {% load static %}
+    <head>
+        <link rel="stylesheet" href="{% static 'successpage.css' %}">
+    </head>
+    <body>
+        <center>
+        <div class="appoinmentpage">
+            <h1>Your Appoinment Has Been Booked Successfully</h1><br><br>
+            <a href="{% url 'appoinments' %}"><button id="appoinmentbutton">Go To Your  Appoinments Page</button></a></center>
+        </div>
+    </body>
+</html>
+

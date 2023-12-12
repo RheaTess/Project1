@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" href="{% static 'salons.css' %}">
+
+    </head>
+    <body>
+        <h1>ADD SERVICES FORM</h1>
+        <form action="{% url 'addservicesform' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <label for="addservices" class="boxname">Enter Service:</label>
+            <input type="text" id="addservices" name="addservices" placeholder="addservices"><br><br><br>
+            <label for="price" class="boxname">Enter Price:</label>
+            <input type="text" id="price" name="price" placeholder="price"><br><br><br>
+            <label type="image" class="boxname"> Image</label>
+            <input type="file" id="image" name="image"><br><br><br>
+            <select name="categoryname" id="category" class="category">
+                <option>Select Filter</option>
+                {% for i in categorydata %}
+                <option value="{{i.category}}">{{i.category}}</option>
+                {% endfor %}
+             </select><br><br>                 
+     
+
+            <input type="submit" value="SUMBIT">
+        </form>
+    </body>
+</html>

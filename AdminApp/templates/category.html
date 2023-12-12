@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" href="{% static 'salons.css' %}">
+
+    </head>
+    <body>
+        <h1>CATEGORY ENTRY FORM</h1>
+        <form action="{% url 'categoryform' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="category" class="boxname">Enter Category:</label>
+            <input type="text" id="category" name="category" placeholder="Enter Category"><br><br><br>
+            <label for="image" class="boxname">Enter Image:</label>
+            <input type="file" id="image" name="image"><br><br><br>
+            <input type="submit" value="SUMBIT">
+        </form>
+    </body>
+</html>

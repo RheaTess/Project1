@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'adminpage.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="countcards">
+                <h1 class="salons"><a href="{% url 'category' %}" style="text-decoration: none;">Categary Form</a></h1>
+                <h1 class="salons"><a href="{% url 'addservices' %}" style="text-decoration: none;">Services Form</a></h1>
+                <h1 class="registers"><a style="text-decoration: none;" href="{% url 'registerdatatable' %}" >Registered Users</a></h1>
+                <h1 class="contacts"><a href="{% url 'feedbacktable' %}" style="text-decoration: none;">Contacted Users</a></h1>
+                <h1 class="bookings"><a href="{% url 'bookingtable' %}" style="text-decoration: none;">Bookings</a></h1>
+                
+            </div>
+
+        </div>
+
+        
+    </body>
+</html>

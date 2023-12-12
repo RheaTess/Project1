@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        
+            <div class="name">
+                
+               <h1>
+                <!-- <img src="https://static.vecteezy.com/system/resources/previews/024/284/257/original/beauty-salon-logo-design-free-vector.jpg" alt="logo" class="logo">-->
+                    <b style="font-size: 130px;color: antiquewhite;font-family: 'Edu TAS Beginner', cursive;"><i>Black Beauty</i></b>
+                </h1> 
+                <a href="{% url 'saloncards' %}" style="text-decoration: none;"><button id="booknowbutton">Book an Appionment</button></a>
+            </div>
+           
+            <header>
+                
+                <div class="navbar">
+                    <nav class="nav-left">
+                        
+                        <div class="dropdown">
+                        <a id="home" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'home' %}">HOME</a></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                        <a id="services" class="dropbtn" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'saloncards' %}">CATEGORY</a>
+                           
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="home" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'services' categoryid='all' %}">SERVICES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="contact" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'contact' %}">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </nav>
+                    <nav  id="mySidenav" class="sidenav">
+                        
+                        
+                        {% if 'loginid' in request.session %}
+                        
+                        <a id="welcome" style="text-decoration: none;font-size: 30px;color: antiquewhite; " href="">Welcome, {{request.session.loginname}}
+                        <a id="logout" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'logout' %}">LOGOUT</a>
+                        {% else %}
+                        <a id="login" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'login' %}">LOGIN</a>
+                        <a id="register" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'register' %}">REGISTER</a>
+                        {% endif %}
+                        <a id="booknow" style="text-decoration: none;font-size: 18px;color: antiquewhite;" href="{% url 'saloncards' %}">BOOK NOW</a>
+                    </nav>
+                </div>
+            </header>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

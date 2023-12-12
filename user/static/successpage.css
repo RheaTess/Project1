@@ -1,0 +1,22 @@
+* {
+    background-color: black;
+}
+h1 {
+    color: antiquewhite;
+    
+}
+#appoinmentbutton {
+    color: antiquewhite;
+    background-color: grey;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.appoinmentpage {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+}

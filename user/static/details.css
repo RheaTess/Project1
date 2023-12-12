@@ -1,0 +1,36 @@
+#name {
+    margin-left: 50px;
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 50px;
+}
+#date {
+    position: absolute;
+    left: 870px;
+    top: 600px;
+    
+}
+#time {
+    position: absolute;
+    left: 800px;
+    top: 450px;
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 50px;
+}
+
+#appoinmentbutton {
+    position: absolute;
+    left: 720px;
+    top: 700px;
+    background-color: black;
+    color: antiquewhite;
+    padding-left: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 200px;
+    font-size: 20px;
+}
+.image {
+    margin-left: 60px;
+}
+
+

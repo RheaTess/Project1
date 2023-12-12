@@ -1,0 +1,100 @@
+header {
+    background-color: black;
+    box-shadow: 4px 4px 10px #888888;
+}
+.logo {
+    width: 7%;
+    margin-right: 0px; /* Adjust the margin as needed to control the spacing between the logo and h1. */
+    
+}
+
+.nav-left {
+    position: absolute;
+    left: 50px;
+    top: 0px;
+}
+.nav-right {
+    position: absolute;
+    top: 128px;
+    left: 1000px;
+}
+h1{
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+
+.container-fluid {
+    display: flex;
+} 
+footer {
+    position: relative;
+    bottom: 0px;
+    background-color: black;
+    padding: 20px;
+    
+}
+
+#address {
+    margin-left: 100px;
+}  
+#links {
+    margin-left: 200px;
+}
+#contacts {
+    margin-left: 300px;
+}
+#search {
+    margin-left: 600px; 
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: antiquewhite;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+#imessage {
+    padding: 30px;
+}
+#feedbacksubmit {
+    background-color: white ;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+.feedback {
+    padding: 30px;
+    background-color: antiquewhite;
+    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.75);
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+    </head>
+    <body>
+        <center><h1 style="background-color: black;color: antiquewhite;padding: 100px;"> CONTACTED USERS
+            <p style="color: antiquewhite; background-color: black;font-size: 20px;"> Total Number Of Contacted Users : {{ totalconatcts_users }}</p></h1></center>
+        <h1>FEEDBACK TABLE</h1>
+        <table class="table" border="1">
+            
+            <tr>
+                <th> Name</th>
+                <th>PH NO</th>
+                <th>MESSAGE</th>
+            </tr>
+            {% for i in feedbacktabledata %}
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.PhNo}}</td>
+                <td>{{i.Message}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

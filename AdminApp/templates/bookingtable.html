@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+    </head>
+    <body>
+        <center><h1 style="background-color: black;color: antiquewhite;padding: 100px;"> BOOKINGS
+            <p style="color: antiquewhite; background-color: black;font-size: 20px;"> Total Number Of Bookings : {{ totalbookings_users }}</p></h1></center>
+        <h1>BOOKING FORM TABLE</h1>
+        <table class="table" border="1">
+            
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>PH NO</th>
+                <th>E-MAIL</th>
+                <th>ADDRESS-1</th>
+                <th>ADDRESS-2</th>
+                <th>ADDRESS-3</th>
+                <th>SERVICE</th>
+                <th>PRICE</th>
+            </tr>
+            {% for i in bookingtabledata %}
+            <tr>
+                <td>{{i.FName}}</td>
+                <td>{{i.LName}}</td>
+                <td>{{i.PhNo}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.Address1}}</td>
+                <td>{{i.Address2}}</td>
+                <td>{{i.Address3}}</td>
+                <td>{{i.serviceid.Add_Services}}</td>
+                <td>{{i.serviceid.Price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
